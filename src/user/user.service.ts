@@ -2,8 +2,9 @@ import { Injectable } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { User } from './user.interface';
 import { InjectRepository } from '@nestjs/typeorm';
-import { CreateUserDto } from './user.dto';
-import { hash } from 'bcrypt';
+import { CreateUserDto, UserSignInDto } from './user.dto';
+import { compare, hash } from 'bcrypt';
+import { UnauthorizedException } from '@nestjs/common/exceptions';
 
 @Injectable()
 export class UserService {
@@ -23,6 +24,20 @@ export class UserService {
     user.password = await this.encryptPassword(dto.password);
     user.phone = dto.phone;
     return await this.repository.save(user);
+  }
+
+  async signIn(dto: UserSignInDto) {
+    const user = await this.repository.findOne({ where: { email: dto.email } });
+    if (!user) {
+      throw new UnauthorizedException();
+    }
+
+    const isMatch = await compare(dto.password, user.password);
+    if (!isMatch) {
+      throw new UnauthorizedException();
+    }
+
+    return user;
   }
 
   async encryptPassword(password: string) {
