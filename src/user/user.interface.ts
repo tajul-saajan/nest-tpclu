@@ -18,7 +18,6 @@ export class User {
   email: string;
 
   @Column({
-    type: 'string',
     unique: true,
   })
   phone: string;
