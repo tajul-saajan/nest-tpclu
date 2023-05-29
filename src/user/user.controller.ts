@@ -9,9 +9,4 @@ export class UserController {
   index() {
     return this.service.getAll();
   }
-
-  @Get('profile')
-  profile() {
-    return this.service;
-  }
 }
