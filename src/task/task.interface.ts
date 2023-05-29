@@ -1,6 +1,5 @@
 import { User } from 'src/user/user.interface';
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
-import { CreateTaskDto } from './task.dto';
 
 @Entity()
 export class Task {
