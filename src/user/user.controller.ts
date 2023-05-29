@@ -12,13 +12,8 @@ export class UserController {
     return this.service.getAll();
   }
 
-  @Post()
-  create(@Body() dto: CreateUserDto) {
-    return this.service.create(dto);
-  }
-
-  @Post('sign-in')
-  signIn(@Body() dto: UserSignInDto) {
-    return this.service.signIn(dto);
+  @Get('profile')
+  profile() {
+    return this.service;
   }
 }
