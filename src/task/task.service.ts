@@ -2,7 +2,7 @@ import { CreateTaskDto, UpdateTaskDto } from './task.dto';
 import { Repository } from 'typeorm';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Task } from './task.interface';
+import { Task } from '../entity/task.interface';
 
 @Injectable()
 export class TaskService {

@@ -1,5 +1,5 @@
 import { CreateUserDto, UserSignInDto } from './../user/user.dto';
-import { User } from './../user/user.interface';
+import { User } from '../entity/user.interface';
 import { UnauthorizedException } from '@nestjs/common/exceptions';
 import { Injectable } from '@nestjs/common';
 import { compare, hash } from 'bcrypt';
