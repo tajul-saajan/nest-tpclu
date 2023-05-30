@@ -7,6 +7,7 @@ import { ConfigModule } from '@nestjs/config';
 import { AuthModule } from './auth/auth.module';
 import { TaskModule } from './task/task.module';
 import { PostModule } from './post/post.module';
+import { CommentModule } from './comment/comment.module';
 import * as Joi from '@hapi/joi';
 
 @Module({
@@ -26,6 +27,7 @@ import * as Joi from '@hapi/joi';
     AuthModule,
     TaskModule,
     PostModule,
+    CommentModule,
   ],
   controllers: [AppController],
   providers: [AppService],
