@@ -2,7 +2,7 @@ import { CreateUserDto, UserSignInDto } from './../user/user.dto';
 import { Body, Controller, Get, Post, Request } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { JwtService } from '@nestjs/jwt';
-import { SkipAuth } from 'src/skipAuth.decorator';
+import { SkipAuth } from 'src/common/decorators/skipAuth.decorator';
 
 @Controller('auth')
 export class AuthController {

@@ -1,4 +1,3 @@
-import { Task } from 'src/task/task.interface';
 import {
   Entity,
   Column,
@@ -7,6 +6,7 @@ import {
   UpdateDateColumn,
   OneToMany,
 } from 'typeorm';
+import { Task } from 'src/entity';
 
 @Entity()
 export class User {

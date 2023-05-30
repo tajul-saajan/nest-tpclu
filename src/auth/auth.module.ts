@@ -1,5 +1,5 @@
-import { AuthGuard } from './auth.guard';
-import { User } from './../user/user.interface';
+import { AuthGuard } from '../common/guards/auth.guard';
+import { User } from '../entity/user.interface';
 import { Module } from '@nestjs/common';
 import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
