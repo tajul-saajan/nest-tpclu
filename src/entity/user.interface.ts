@@ -7,6 +7,7 @@ import {
   OneToMany,
 } from 'typeorm';
 import { Task } from 'src/entity';
+import { Post } from 'src/post/entities/post.entity';
 
 @Entity()
 export class User {
@@ -33,4 +34,7 @@ export class User {
 
   @OneToMany(() => Task, (task: Task) => task.added_by)
   tasks: Task[];
+
+  @OneToMany(() => Post, (post) => post.created_by)
+  posts: Post[];
 }
