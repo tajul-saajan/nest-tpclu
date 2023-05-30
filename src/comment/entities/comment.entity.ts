@@ -10,5 +10,5 @@ export class Comment {
   text: string;
 
   @ManyToOne(() => Post, (post) => post.id)
-  post_id: number;
+  post: number;
 }

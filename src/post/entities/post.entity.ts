@@ -22,6 +22,6 @@ export class Post {
   @ManyToOne(() => User, (user) => user.id)
   created_by: number;
 
-  @OneToMany(() => Comment, (comment) => comment.post_id)
+  @OneToMany(() => Comment, (comment) => comment.post)
   comments: Comment[];
 }
