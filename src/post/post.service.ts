@@ -32,6 +32,18 @@ export class PostService {
       .execute();
   }
 
+  async likePost(id: number) {
+    const post = await this.repository.findOne({
+      where: { id: id },
+      relations: { like: true },
+    });
+
+    // post.like.count += 1;
+    // await this.repository.save(post);
+
+    return post;
+  }
+
   async remove(id: number) {
     return await this.repository.delete(id);
   }

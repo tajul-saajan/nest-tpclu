@@ -1,5 +1,5 @@
 import { Post } from 'src/post/entities/post.entity';
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class Like {
@@ -8,7 +8,4 @@ export class Like {
 
   @Column({ default: 0 })
   count: number;
-
-  @ManyToOne(() => Post, (post) => post.id)
-  post: number;
 }

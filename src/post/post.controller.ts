@@ -39,4 +39,9 @@ export class PostController {
   remove(@Param('id') id: string) {
     return this.postService.remove(+id);
   }
+
+  @Post(':id/like')
+  likePost(@Param('id') id: string) {
+    return this.postService.likePost(+id);
+  }
 }

@@ -1,10 +1,13 @@
 import { Comment } from 'src/comment/entities/comment.entity';
 import { User } from 'src/entity';
+import { Like } from 'src/like/entities/like.entity';
 import {
   Column,
   Entity,
+  JoinColumn,
   ManyToOne,
   OneToMany,
+  OneToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 
@@ -24,4 +27,8 @@ export class Post {
 
   @OneToMany(() => Comment, (comment) => comment.post)
   comments: Comment[];
+
+  @OneToOne(() => Like, (like) => like.id)
+  @JoinColumn()
+  like: Like;
 }
